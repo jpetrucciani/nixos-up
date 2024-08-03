@@ -4,7 +4,7 @@
 , config ? { }
 , system ? builtins.currentSystem
 , extraConfig ? { }
-, pkgs ? nixpkgs
+, pkgs ? import nixpkgs
     ({
       inherit system;
       overlays = [ ];
