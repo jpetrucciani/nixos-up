@@ -323,9 +323,10 @@ config = config.replace("# List services that you want to enable:", extra_config
 
 # Non-EFI systems require boot.loader.grub.device to be specified.
 if not efi:
+    selector = "boot.loader.grub.enable = true;"
     config = config.replace(
-        "boot.loader.grub.version = 2;",
-        f'boot.loader.grub.version = 2;\n  boot.loader.grub.device = "/dev/{selected_disk_name}";\n',
+        selector,
+        f'{selector}\n  boot.loader.grub.version = 2;\n  boot.loader.grub.device = "/dev/{selected_disk_name}";\n',
     )
 
 # Declarative user management
