@@ -2,6 +2,10 @@
   description = "NixOS flake to help bootstrap new installs!";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    flake-compat = {
+      flake = false;
+      url = "github:edolstra/flake-compat";
+    };
   };
   outputs = { nixpkgs, ... }:
     let
