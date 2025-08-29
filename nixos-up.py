@@ -317,6 +317,7 @@ config = uncomment(config, "services.openssh.enable = true;")
 config = uncomment(config, "system.copySystemConfiguration = true;")
 
 extra_config = """\
+    security.sudo.wheelNeedsPassword = false;
     services.tailscale.enable = true;
 """
 config = config.replace("# List services that you want to enable:", extra_config)
